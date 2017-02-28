@@ -1,0 +1,35 @@
+.head-text{font-family:monospace;
+font-size:16pt;
+text-align:right;
+position:relative;
+}
+body{font-family:sans-serif monospace;
+font-size:13pt
+}
+.appearRight{
+    float:right;
+    font-size:16pt;
+    font-family:monospace;
+    
+}
+pre{height:300px;
+    overflow:scroll;
+}
+.code-heading{
+    text-align:center;
+    font-size:14pt;
+    background-color:azure;
+    border-radius:5px;
+    padding:10px;
+}
+.download-btn{
+    margin-top:10px;
+    margin-bottom:5px;
+    font-size:12pt;
+}
+.alert{width:300px;}
+@media (min-width:1000px)
+{
+    .form{margin-left:30%;}
+    
+}

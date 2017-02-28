@@ -1,0 +1,24 @@
+.box{height:100px;
+width:15px;
+background-color:greenyellow;
+    
+    border-radius:5px;
+}
+.box-content{
+    border:solid grey thin;
+    width:100%;
+    position:relative;
+    left:15px;
+}
+.page-header{font-family:monospace;
+font-size:16pt;
+}
+li{list-style-type:none;
+font-size:13pt;
+font-family:monospace sans-serif;
+}
+.space{padding:20px;}
+.nav{margin-bottom:30px;}
+.panel-heading{font-size:13pt;
+text-align:center;
+}

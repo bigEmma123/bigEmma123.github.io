@@ -1,0 +1,7 @@
+.footer >p{text-align:center;
+padding:10px;
+    background-color:azure;
+}
+.footer >ul{list-style-type:none;
+margin-left:5px;
+text-align:center;}
