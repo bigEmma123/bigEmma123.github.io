@@ -15,11 +15,11 @@ $(function()
     }
     var userData;
     //getUser data
-    var url="http://coded.dev/GitRepo/qwajdnjsbdys/sdsk2121.json";
+    var url="http://bigEmma123.github.io/qwajdnjsbdys/sdsk2121.json";
     //retrieve JSON
     /****************************************/
     $.ajax(
-    {url:"http://coded.dev/GitRepo/qwajdnjsbdys/sdsk2121.json",
+    {url:"http://bigEmma123.github.io/qwajdnjsbdys/sdsk2121.json",
     async:false,
     global:true,
     type:"GET",
