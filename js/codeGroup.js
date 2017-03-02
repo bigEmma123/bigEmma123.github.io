@@ -15,11 +15,11 @@ $(function()
     }
     var userData;
     //getUser data
-    var url="http://bigEmma123.github.io/qwajdnjsbdys/sdsk2121.json";
+
     //retrieve JSON
     /****************************************/
     $.ajax(
-    {url:"http://bigEmma123.github.io/qwajdnjsbdys/sdsk2121.json",
+    {url:"qwajdnjsbdys/sdsk2121.json",
     async:false,
     global:true,
     type:"GET",
@@ -65,7 +65,7 @@ $(function()
     function authUser(mobNumber)
     {
         //linear search
-        for (var i=0; i<12; i++)
+        for (var i=0; i<num_users; i++)
             {
                 if (jsObject[i].Number==mobNumber)
                     {
@@ -80,7 +80,7 @@ $(function()
                  }
     }
     
-   console.log(authUser('0277359229'));
+  
           
     //
     //authenticate token
@@ -100,9 +100,6 @@ $(function()
         }
     else return false;
 }
-    //console.log(document.cookie);
-    
-   //var auth=authUser("0572228282");
     //Construct login page
     function constructLogin()
 {
@@ -237,4 +234,4 @@ $(function()
 //show animations for the search algo's
  
  
- console.log(document.cookie);
+
