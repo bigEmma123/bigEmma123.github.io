@@ -181,6 +181,8 @@ $.ajax(
     //authenticate user
     $('.authenticate').click(function(){
         var userInput=$('.form-control').val();
+		//get users index to access his token 
+         var index=$('#index').val();
         if(authUser(userInput))
             {
                 //clear alert warning
@@ -190,13 +192,11 @@ $.ajax(
                 //if user chks remember me create a cookie
                 var chkVal=$('.chkBox').prop('checked');
                 //alert(chkVal);
-                //get users index to access his token 
-                var index=$('#index').val();
+                
                 if(chkVal)
                     {
                         //set cookie
                         //use user token to set cookie
-                        
                         document.cookie="token="+jsObject[index].token;
                     }
                 else 
