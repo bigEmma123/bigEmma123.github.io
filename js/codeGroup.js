@@ -192,7 +192,6 @@ function authUser(mobNumber)
     });
    
 });
-/
 /****Note********
 Had problem with the index where I had to make it local to function authuser and authtoken
 so had to user a hidden input filed with id index so that i can set index in those functions to the #index value 
