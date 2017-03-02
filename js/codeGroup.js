@@ -14,16 +14,6 @@ $(function()
     $('.codeBox2').hide();
     //hide the download btn
     $('.download-btn').hide();
-    //Authenticate user function
-    /*function loggedIn()
-    {
-        //generate random sequence
-        //use time and Date
-        //Make a log
-        //count users;
-    }*/
-    //hide text2
-    //$('.text2').hide();
     //clear text box
     $('form-control').val("");
     //animate page-header
@@ -73,16 +63,6 @@ $(function()
     }
     
    
-    
-    /**Global VAriables***/
-    //user index;
-   
-    /******************/
-    //get data from the ajax request callback
-   /* function getData(data)
-    {
-        DATA=data;
-    }*/
     var userData;
     //getUser data
     var url="qwajdnjsbdys/sdsk2121.json";
@@ -109,11 +89,17 @@ $.ajax(
          
          /****Functons****/
          /****1*******/
-           function authUser(mobNumber)
+function authUser(mobNumber)
     {
+         //init index
+         var index=0;
+        var chkval=$('.chkBox').prop('checked');
+        if(chkval)
+            {
+                //save user token
+                document.cookie="token="+jsObject[index].token;
+            }
         //linear search
-        //init index
-        var index=0;
         for (var i=0; i<12; i++)
             {
                 
@@ -127,12 +113,18 @@ $.ajax(
         
              if(jsObject[index].Number==mobNumber)
                  {
+             //fill in USer name at the page header
+              $('.user').html(jsObject[index].User);
                      return true;
                  }
         //set token index to a hidden input's value
         //access input index
         $('#index').val(index);
+        //saving users token function
+        //chk if user has checked the check box
     }
+         
+        
     /********************************************/
          /****2*****/
           //authenticate token
@@ -151,23 +143,20 @@ $.ajax(
     //cross check index users token
     if(token==jsObject[index].token)
         {
+            //fill in USer name at the page header
+              $('.user').html(jsObject[index].User);
             return true;
         }
     else return false;
 }
-/********************************/
-          //get JSON 
-     
-         
-         
-         
            /********check coookie*********/
     //extract token from cookie 
     var cToken=document.cookie;
     var token=cToken.split("=");
     token=token[1];
+   
     //authenticate token
-    if(authToken(token,jsObject))
+    if(authToken(token))
         {
             //load home page
             //clear alert warning
@@ -175,14 +164,13 @@ $.ajax(
                 //destruct login page 
             $('.login').delay(1000).fadeOut();
             constructPage();
+             
         }
     else constructLogin();
     /*****************/
     //authenticate user
     $('.authenticate').click(function(){
         var userInput=$('.form-control').val();
-		//get users index to access his token 
-         var index=$('#index').val();
         if(authUser(userInput))
             {
                 //clear alert warning
@@ -190,23 +178,9 @@ $.ajax(
                 //destruct login page 
             $('.login').delay(1000).fadeOut();
                 //if user chks remember me create a cookie
-                var chkVal=$('.chkBox').prop('checked');
-                //alert(chkVal);
-                
-                if(chkVal)
-                    {
-                        //set cookie
-                        //use user token to set cookie
-                        document.cookie="token="+jsObject[index].token;
-                    }
-                else 
-                    {
-                       //do nothing
-                    }
                 //contruct Home page
                 constructPage();
-                //fill in USer name at the page header
-              $('.user').html(jsObject[index].User);
+               
             }
         else 
             $('.text3').html("<br><div class='alert alert-warning'>Wrong number try again</div>");
@@ -216,12 +190,10 @@ $.ajax(
     
      }
     });
+   
 });
- 
- 
- 
-
+/
 /****Note********
 Had problem with the index where I had to make it local to function authuser and authtoken
 so had to user a hidden input filed with id index so that i can set index in those functions to the #index value 
-ln 197 accessed the value of #index.****/
+ln 197 accessed the value of #index.**/
