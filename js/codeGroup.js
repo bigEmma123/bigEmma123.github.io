@@ -20,10 +20,9 @@ $(function()
     /****************************************/
     $.ajax(
     {url:"qwajdnjsbdys/sdsk2121.json",
-    async:false,
+	async:false,
     global:true,
     type:"GET",
-    dataType:"JSON",
     complete:function(data){
         getData(data);
     }
