@@ -19,10 +19,11 @@ $(function()
     //retrieve JSON
     /****************************************/
     $.ajax(
-    {url:"qwajdnjsbdys/sdsk2121.json",
+    {url:"https://bigemma123.github.io/qwajdnjsbdys/sdsk2121.json",
 	async:false,
     global:true,
     type:"GET",
+	dataType:"JSON",
     complete:function(data){
         getData(data);
     }
